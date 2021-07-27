@@ -2,8 +2,7 @@
 -- How many actors are there with the last name ‘Wahlberg’? Answer: 2
 SELECT COUNT(last_name)
 FROM actor
-WHERE last_name = 'Wahlberg'
-GROUP BY last_name;
+WHERE last_name = 'Wahlberg';
 
 -- How many payments were made between $3.99 and $5.99? Answer: 5,607
 SELECT COUNT(amount)
@@ -19,13 +18,13 @@ ORDER BY COUNT(film_id) DESC;
 -- How many customers have the last name ‘William’? Answer: No customers have the last name William.
 SELECT COUNT(last_name)
 FROM customer
-WHERE last_name = 'William'
-GROUP BY last_name;
+WHERE last_name = 'William';
 
 -- What store employee (get the id) sold the most rentals? Answer: Staff ID #1 sold the most rentals.
 SELECT staff_id, COUNT(staff_id)
 FROM rental
-GROUP BY staff_id;
+GROUP BY staff_id
+ORDER BY COUNT(staff_id) DESC;
 
 -- How many different district names are there? Answer: 378
 SELECT COUNT(DISTINCT district)
